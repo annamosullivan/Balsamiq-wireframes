@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+    {% for post in posts %}
+        <div>
+            <div>
+                {{ post.published_date }}
+            </div>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.content|linebreaks }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
+</body>
+</html>

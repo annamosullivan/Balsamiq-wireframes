@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+{% load bootstrap_tags %}
+{% block content %}
+    <form role="form" method="post" action="{% url 'login' %}">
+        <legend>Login</legend>
+        {% csrf_token %}
+        {{ form| as_bootstrap }}
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+{% endblock %}
+</body>
+</html>

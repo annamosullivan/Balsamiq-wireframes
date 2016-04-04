@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+        {% load bootstrap_tags %}
+        <h1>Add A Post</h1>
+        <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | as_bootstrap}}
+                <button type="submit" class=" btn btn- btn-info">Save</button>
+        </form>
+{% endblock %}
+</body>
+</html>

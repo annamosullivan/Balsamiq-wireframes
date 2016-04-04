@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load disqus_tags %}
+{% set_disqus_title post.title %}
+{% disqus_show_comments %}
+<div class="row">
+   <div class="col-xs-9">
+      {% if post.image %}
+          <img src="/media/{{ post.image}}">
+      {% endif %}
+      <p>{{ post.content|linebreaks }}</p>
+      <p><button class="btn btn-default" onclick="location.href='/blog'">Back to Blog</button></p>
+</body>
+</html>
